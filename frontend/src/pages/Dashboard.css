@@ -1,0 +1,322 @@
+/* Dashboard.css */
+
+.dashboard {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header */
+.dash-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.dash-greeting {
+  color: var(--text-secondary);
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.dash-name {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.dash-account-chip {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 100px;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  gap: 6px;
+}
+
+.monospace {
+  font-family: monospace;
+  color: var(--text-primary);
+  letter-spacing: 1px;
+}
+
+/* Balance Grid */
+.balance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.balance-card.primary {
+  background: linear-gradient(135deg, #0d2a22 0%, #0a1a2e 100%);
+  border: 1px solid rgba(0, 212, 170, 0.2);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.balance-label {
+  font-size: 13px;
+  color: var(--accent-green);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.balance-amount {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.balance-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 11px 0;
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s;
+}
+
+.action-btn.deposit {
+  background: var(--accent-green);
+  color: #000;
+}
+
+.action-btn.deposit:hover {
+  background: #00f0c0;
+  transform: translateY(-1px);
+}
+
+.action-btn.withdraw {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+}
+
+.action-btn.withdraw:hover {
+  border-color: var(--text-secondary);
+}
+
+/* Stat Cards Grid */
+.stat-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  transition: border-color 0.2s;
+}
+
+.stat-card:hover {
+  border-color: var(--border-light);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+/* Chart */
+.chart-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+/* Transactions */
+.transactions-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.tx-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.tx-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.tx-row:last-child {
+  border-bottom: none;
+}
+
+.tx-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.tx-icon.deposit    { background: rgba(0, 212, 170, 0.1); color: var(--accent-green); }
+.tx-icon.withdrawal { background: rgba(239, 68, 68, 0.1);  color: var(--accent-red);   }
+.tx-icon.transfer   { background: rgba(59, 130, 246, 0.1); color: var(--accent-blue);  }
+.tx-icon.payment    { background: rgba(245, 158, 11, 0.1); color: var(--accent-yellow);}
+
+.tx-details {
+  flex: 1;
+}
+
+.tx-desc {
+  font-size: 14px;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.tx-date {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.tx-amount {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tx-amount.credit { color: var(--accent-green); }
+.tx-amount.debit  { color: var(--accent-red); }
+
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--text-secondary);
+}
+
+.empty-state p { margin-bottom: 6px; }
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 24px;
+}
+
+.modal {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: 20px;
+  padding: 32px;
+  width: 100%;
+  max-width: 400px;
+  animation: fadeUp 0.25s ease;
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.modal-close {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.modal-close:hover {
+  color: var(--accent-red);
+  border-color: var(--accent-red);
+}
+
+.modal-error {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #fca5a5;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .balance-grid {
+    grid-template-columns: 1fr;
+  }
+  .stat-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+  .balance-amount {
+    font-size: 28px;
+  }
+}

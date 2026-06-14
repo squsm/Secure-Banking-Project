@@ -1,0 +1,208 @@
+/* TransactionsPage.css */
+
+.transactions-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Summary Row */
+.summary-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.summary-item {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 16px;
+}
+
+.summary-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.summary-value {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Filter Bar */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.filter-tabs {
+  display: flex;
+  gap: 6px;
+  background: var(--bg-card);
+  padding: 4px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+}
+
+.filter-tab {
+  background: none;
+  color: var(--text-secondary);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.filter-tab:hover {
+  color: var(--text-primary);
+}
+
+.filter-tab.active {
+  background: var(--accent-green-dim);
+  color: var(--accent-green);
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus {
+  border-color: var(--accent-green);
+}
+
+.search-input::placeholder {
+  color: var(--text-muted);
+}
+
+/* Full Transaction List */
+.full-tx-list {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.full-tx-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.full-tx-row:last-child {
+  border-bottom: none;
+}
+
+.full-tx-row:hover {
+  background: var(--bg-card-hover);
+}
+
+.tx-icon-lg {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.tx-icon-lg.deposit    { background: rgba(0, 212, 170, 0.1); color: var(--accent-green); }
+.tx-icon-lg.withdrawal { background: rgba(239, 68, 68, 0.1);  color: var(--accent-red);   }
+.tx-icon-lg.transfer   { background: rgba(59, 130, 246, 0.1); color: var(--accent-blue);  }
+.tx-icon-lg.payment    { background: rgba(245, 158, 11, 0.1); color: var(--accent-yellow);}
+
+.full-tx-details {
+  flex: 1;
+}
+
+.full-tx-desc {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.full-tx-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tx-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.tx-badge.green  { background: rgba(0, 212, 170, 0.12); color: var(--accent-green); }
+.tx-badge.red    { background: rgba(239, 68, 68, 0.12);  color: var(--accent-red);   }
+.tx-badge.blue   { background: rgba(59, 130, 246, 0.12); color: var(--accent-blue);  }
+.tx-badge.yellow { background: rgba(245, 158, 11, 0.12); color: var(--accent-yellow);}
+
+.tx-category {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: capitalize;
+  background: var(--bg-secondary);
+  padding: 2px 8px;
+  border-radius: 6px;
+}
+
+.tx-date-full {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.full-tx-right {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.full-tx-amount {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.full-tx-amount.credit { color: var(--accent-green); }
+.full-tx-amount.debit  { color: var(--accent-red);   }
+
+.full-tx-balance {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .summary-row {
+    grid-template-columns: 1fr 1fr;
+  }
+  .full-tx-row {
+    padding: 14px 16px;
+  }
+}

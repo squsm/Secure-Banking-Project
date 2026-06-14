@@ -1,0 +1,101 @@
+/* ============================================================
+   index.css — Global Styles for NovBank
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
+
+/* CSS Custom Properties (Variables) */
+:root {
+  --bg-primary: #0a0e1a;
+  --bg-secondary: #111827;
+  --bg-card: #141c2e;
+  --bg-card-hover: #1a2438;
+  --accent-green: #00d4aa;
+  --accent-green-dim: #00d4aa22;
+  --accent-blue: #3b82f6;
+  --accent-red: #ef4444;
+  --accent-yellow: #f59e0b;
+  --text-primary: #f0f4ff;
+  --text-secondary: #8899bb;
+  --text-muted: #4a5568;
+  --border: #1e293b;
+  --border-light: #2d3748;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-green: 0 4px 24px rgba(0, 212, 170, 0.15);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-body);
+}
+
+input, select, textarea {
+  font-family: var(--font-body);
+  outline: none;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* Utility Classes */
+.text-green { color: var(--accent-green); }
+.text-red   { color: var(--accent-red); }
+.text-muted { color: var(--text-secondary); }
+
+/* Loading spinner */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--border-light);
+  border-top-color: var(--accent-green);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Page transitions */
+.page-enter {
+  animation: fadeUp 0.4s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
